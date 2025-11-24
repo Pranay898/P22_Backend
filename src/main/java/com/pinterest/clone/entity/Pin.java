@@ -27,6 +27,12 @@ public class Pin {
 
     private LocalDateTime createdAt = LocalDateTime.now();
 
+    @Column(name = "is_sponsored")
+    private boolean isSponsored = false;
+
+    @Column(name = "promotion_url")
+    private String promotionUrl;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     @JsonIgnore
